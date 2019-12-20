@@ -10,7 +10,7 @@ export class DataApi implements InMemoryDbService{
       { id: 5, name: 'Sumit', email: 'sumit@live.in', contact: '9909999999' }
 
     ]
-    return users
+    return {users}
   }
 
 }
