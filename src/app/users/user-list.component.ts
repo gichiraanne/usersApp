@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-
+import { Component, OnInit } from "@angular/core";
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -7,6 +7,13 @@ import { Component } from "@angular/core";
   styles: []
 })
 
-export class UserListComponent{
+export class UserListComponent implements OnInit{
+  users;
 
+  constructor(private dataService:DataService){}
+
+  ngOnInit(){
+    this.users = this.dataService.getUsers()
+    console.log(this.users)
+  }
 }
