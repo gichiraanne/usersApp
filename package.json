@@ -10,6 +10,11 @@
     "e2e": "ng e2e"
   },
   "private": true,
+  "keywords": [
+    "Angular ",
+    "CRUD"
+  ],
+  "author": "Annie Gichira <gichiraanne@gmail.com>",
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
