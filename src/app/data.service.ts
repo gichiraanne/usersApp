@@ -1,10 +1,15 @@
-import { NgModule } from '@angular/core'
+import { NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from './users/user';
+
 
 @NgModule()
 
 export class DataService {
-  constructor(){};
+  constructor(private http: HttpClient){};
 
+  usersUrl = 'api/users'
   users = [
     { id: 1, name: 'Ram', email: 'ram@gmail.com', contact: '0000000000' },
     { id: 2, name: 'Shyam', email: 'sh@gmail.com', contact: '1111111111' },
@@ -13,9 +18,8 @@ export class DataService {
     { id: 5, name: 'Sumit', email: 'sumit@live.in', contact: '9909999999' }
 
   ]
-
-  getUsers(){
-    return this.users
+  getUsers(): Observable<User []>{
+    return this.http.get<User []>(this.usersUrl)
   }
 }
 
