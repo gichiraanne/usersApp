@@ -1,0 +1,17 @@
+.usersTable{
+  font-size: 1.2em;
+  padding: 20px;
+  &__row{
+    width: 100%;
+    & td{
+      padding:5px 10px 5px 10px;
+    }
+  }
+  &__head{
+    width: 100%;
+    & th{
+      text-align: left;
+      padding:5px 10px 5px 10px;
+    }
+  }
+}

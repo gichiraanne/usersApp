@@ -1,12 +1,15 @@
 <h1>Users</h1>
-<table>
+<table class="usersTable">
   <thead>
-    <th>#</th>
-    <th>Name</th>
-    <th>Phone</th>
+    <tr class="usersTable__head">
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
   </thead>
   <tbody>
-    <tr *ngFor = "let user of users">
+    <tr class="usersTable__row" *ngFor="let user of users">
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
