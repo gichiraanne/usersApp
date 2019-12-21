@@ -14,13 +14,23 @@ export class UserListComponent implements OnInit{
   constructor(private dataService:DataService){}
 
   ngOnInit(){
-    this.dataService.getUsers().subscribe(data => {
-      this.users = data;
-    })
+    this.showusers()
 
     this.dataService.getUser(1).subscribe(data => {
       this.user = data;
       console.log(this.user)
+    })
+
+  }
+  showusers(){
+    this.dataService.getUsers().subscribe(data => {
+      this.users = data;
+    })
+  }
+  deleteUser(id){
+    this.dataService.deleteUser(id).subscribe(data => {
+      console.log(data)
+      this.showusers()
     })
   }
 }
