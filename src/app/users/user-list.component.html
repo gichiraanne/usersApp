@@ -16,7 +16,10 @@
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.contact}}</td>
-        <td><Button type="button" (click)="deleteUser(user.id)">Delete</Button></td>
+        <td>
+          <Button type="button" (click)="updateUser(user.id, user)" style="margin-left: 10px;">Update</Button>
+          <Button type="button" (click)="deleteUser(user.id)">Delete</Button>
+        </td>
       </tr>
     </tbody>
     <button type="button" (click)="createUser()">Add New</button>

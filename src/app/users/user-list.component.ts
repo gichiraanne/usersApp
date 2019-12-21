@@ -42,4 +42,13 @@ export class UserListComponent implements OnInit{
       this.showusers();
     })
   }
+
+  updateUser(id, user){
+    //let user = {name: "Edited Name",email: 'ram1@gmail.com', contact: '0000000000'}
+    user.name = "Edited"
+    this.dataService.updateUser(user, id).subscribe(data => {
+      console.log(data)
+      this.showusers();
+    })
+  }
 }
