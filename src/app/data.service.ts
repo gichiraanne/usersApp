@@ -18,8 +18,14 @@ export class DataService {
     { id: 5, name: 'Sumit', email: 'sumit@live.in', contact: '9909999999' }
 
   ]
+
   getUsers(): Observable<User []>{
     return this.http.get<User []>(this.usersUrl)
+  }
+
+  getUser(id:Number): Observable<User>{
+    return this.http.get<User>(`${this.usersUrl}/${id}`)
+
   }
 }
 
