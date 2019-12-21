@@ -1,19 +1,22 @@
 <h1>Users</h1>
-<table class="usersTable">
-  <thead>
-    <tr class="usersTable__head">
-      <th>#</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="usersTable__row" *ngFor="let user of users">
-      <td>{{user.id}}</td>
-      <td>{{user.name}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.contact}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table table responsive">
+    <thead>
+      <tr class="usersTable__head">
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="usersTable__row" *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.contact}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
