@@ -27,5 +27,9 @@ export class DataService {
     return this.http.get<User>(`${this.usersUrl}/${id}`)
 
   }
+
+  deleteUser(id:Number): Observable<User>{
+    return this.http.delete<User>(`${this.usersUrl}/${id}`)
+  }
 }
 
