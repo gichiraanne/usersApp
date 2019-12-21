@@ -9,14 +9,18 @@ import { DataService } from '../data.service';
 
 export class UserListComponent implements OnInit{
   users;
+  user;
 
   constructor(private dataService:DataService){}
 
   ngOnInit(){
     this.dataService.getUsers().subscribe(data => {
       this.users = data;
-      console.log(this.users)
     })
 
+    this.dataService.getUser(1).subscribe(data => {
+      this.user = data;
+      console.log(this.user)
+    })
   }
 }
