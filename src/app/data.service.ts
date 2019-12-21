@@ -28,8 +28,14 @@ export class DataService {
 
   }
 
+  createUser(user){
+    return this.http.post(this.usersUrl, user)
+  }
+
   deleteUser(id:Number): Observable<User>{
     return this.http.delete<User>(`${this.usersUrl}/${id}`)
   }
+
+
 }
 
