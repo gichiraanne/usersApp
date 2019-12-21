@@ -19,6 +19,10 @@ export class DataService {
 
   ]
 
+  createUser(user){
+    return this.http.post(this.usersUrl, user)
+  }
+
   getUsers(): Observable<User []>{
     return this.http.get<User []>(this.usersUrl)
   }
@@ -28,8 +32,8 @@ export class DataService {
 
   }
 
-  createUser(user){
-    return this.http.post(this.usersUrl, user)
+  updateUser(user, id:Number): Observable<User>{
+    return this.http.put<User>(`${this.usersUrl}/${id}`,user);
   }
 
   deleteUser(id:Number): Observable<User>{
