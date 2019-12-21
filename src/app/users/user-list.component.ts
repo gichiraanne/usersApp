@@ -27,10 +27,19 @@ export class UserListComponent implements OnInit{
       this.users = data;
     })
   }
+
   deleteUser(id){
     this.dataService.deleteUser(id).subscribe(data => {
       console.log(data)
       this.showusers()
+    })
+  }
+
+  createUser(){
+    let user = { name: 'Ram Added', email: 'ram1@gmail.com', contact: '0000000000' };
+    this.dataService.createUser(user).subscribe(data => {
+      console.log(data)
+      this.showusers();
     })
   }
 }
