@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-user-list',
+  selector: 'app-users',
   templateUrl: 'user-list.component.html',
   styleUrls: ['user-list.component.scss']
 })
 
-export class UserListComponent implements OnInit{
+export class UsersComponent implements OnInit{
   users;
   user;
 

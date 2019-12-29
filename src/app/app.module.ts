@@ -6,7 +6,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataApi  } from './data-api';
 
 import { AppComponent } from './app.component';
-import { UserListComponent } from './users/user-list.component';
+import { UsersComponent } from './users/users.component';
 import { DataService } from './data.service';
 import { appRoutes } from './app.router';
 
@@ -14,7 +14,7 @@ import { appRoutes } from './app.router';
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent
+    UsersComponent
   ],
   imports: [
     BrowserModule,
