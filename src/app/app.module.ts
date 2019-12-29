@@ -7,6 +7,7 @@ import { DataApi  } from './data-api';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
+import { UserComponent } from './user/user.component';
 import { DataService } from './data.service';
 import { appRoutes } from './app.router';
 
@@ -14,7 +15,8 @@ import { appRoutes } from './app.router';
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
