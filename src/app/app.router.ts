@@ -4,7 +4,7 @@ import { UserComponent } from './user/user.component';
 
 export const appRoutes: Routes = [
   {path:'users', component: UsersComponent },
-  {path:'user', component: UserComponent },
+  {path:'users/:id', component: UserComponent },
   {path:'', redirectTo:'/users', pathMatch:'full' }
 ]
 
