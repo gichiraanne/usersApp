@@ -7,7 +7,13 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-user',
   template: `
-    <h1>{{user?.name}}</h1>
+  <div class="container">
+      <h2 class="md-5">Details for user {{user?.name}}</h2>
+      <p><strong class="mr-3">Name:</strong>{{user?.name}}</p>
+      <p><strong class="mr-3">Email:</strong>{{user?.email}}</p>
+      <p><strong class="mr-3">Phone:</strong>{{user?.contact}}</p>
+      <button class="btn btn-sm btn-primary mr-3 mt-3" type="button" routerLink="/users">All users</button>
+  </div>
   `
 })
 
