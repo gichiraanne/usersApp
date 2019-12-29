@@ -18,8 +18,9 @@
           <td>{{user.email}}</td>
           <td>{{user.contact}}</td>
           <td>
-            <Button class="btn btn-sm btn-secondary mr-3 mb-2" type="button" (click)="updateUser(user.id, user)">Update</Button>
-            <Button  class="btn btn-sm btn-danger" type="button" (click)="deleteUser(user.id)">Delete</Button>
+            <button class="btn btn-sm btn-primary mr-3 mb-2" type="button" routerLink="/user">View</button>
+            <button class="btn btn-sm btn-secondary mr-3 mb-2" type="button" (click)="updateUser(user.id, user)">Update</button>
+            <button  class="btn btn-sm btn-danger" type="button" (click)="deleteUser(user.id)">Delete</button>
           </td>
         </tr>
       </tbody>
