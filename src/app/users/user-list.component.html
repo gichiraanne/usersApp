@@ -1,8 +1,8 @@
 <h1>Users</h1>
 <div class="container">
   <table class="table table responsive">
-    <thead>
-      <tr class="usersTable__head">
+    <thead class="thead-dark">
+      <tr>
         <th>#</th>
         <th>Name</th>
         <th>Email</th>
@@ -11,18 +11,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="usersTable__row" *ngFor="let user of users">
+      <tr *ngFor="let user of users">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.contact}}</td>
         <td>
-          <Button type="button" (click)="updateUser(user.id, user)" style="margin-left: 10px;">Update</Button>
-          <Button type="button" (click)="deleteUser(user.id)">Delete</Button>
+          <Button class="btn btn-sm btn-secondary mr-3" type="button" (click)="updateUser(user.id, user)">Update</Button>
+          <Button  class="btn btn-sm btn-danger" type="button" (click)="deleteUser(user.id)">Delete</Button>
         </td>
       </tr>
     </tbody>
-    <button type="button" (click)="createUser()">Add New</button>
+    <button  class="btn btn-sm btn-info" type="button" (click)="createUser()">Add New</button>
   </table>
 </div>
 
