@@ -22,7 +22,6 @@ export class UserNewComponent {
 
   createUser(user){
     this.dataService.createUser(user).subscribe(data => {
-      console.log(data)
       this.router.navigate(['/users']);
     })
   }
