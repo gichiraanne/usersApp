@@ -8,6 +8,7 @@ import { DataApi  } from './data-api';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserViewComponent } from './user/user-view.component';
+import { UserNewComponent } from './user/user-new.component';
 import { DataService } from './data.service';
 import { appRoutes } from './app.router';
 
@@ -16,7 +17,8 @@ import { appRoutes } from './app.router';
   declarations: [
     AppComponent,
     UsersComponent,
-    UserViewComponent
+    UserViewComponent,
+    UserNewComponent
   ],
   imports: [
     BrowserModule,
