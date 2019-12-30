@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
   templateUrl: 'user-form.component.html'
 })
 
-export class UserNewComponent implements OnInit{
+export class UserNewComponent {
 
   userForm: FormGroup;
 
@@ -18,8 +18,5 @@ export class UserNewComponent implements OnInit{
     })
   }
 
-  ngOnInit(){
-
-  }
 
 }
