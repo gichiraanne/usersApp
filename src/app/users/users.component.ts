@@ -35,14 +35,6 @@ export class UsersComponent implements OnInit{
     })
   }
 
-  createUser(){
-    let user = { name: 'Ram Added', email: 'ram1@gmail.com', contact: '0000000000' };
-    this.dataService.createUser(user).subscribe(data => {
-      console.log(data)
-      this.showusers();
-    })
-  }
-
   updateUser(id, user){
     //let user = {name: "Edited Name",email: 'ram1@gmail.com', contact: '0000000000'}
     user.name = "Edited"

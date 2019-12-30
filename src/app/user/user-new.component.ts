@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-new',
@@ -10,7 +12,7 @@ export class UserNewComponent {
 
   userForm: FormGroup;
 
-  constructor(private formBuilder:FormBuilder){
+  constructor(private formBuilder:FormBuilder, private dataService:DataService, private router:Router){
     this.userForm = this.formBuilder.group({
       name: new FormControl(),
       contact: new FormControl(),
@@ -18,5 +20,11 @@ export class UserNewComponent {
     })
   }
 
+  createUser(user){
+    this.dataService.createUser(user).subscribe(data => {
+      console.log(data)
+      this.router.navigate(['/users']);
+    })
+  }
 
 }
