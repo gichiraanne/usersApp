@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataApi  } from './data-api';
 
@@ -23,6 +24,8 @@ import { appRoutes } from './app.router';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     InMemoryWebApiModule.forRoot(DataApi)
   ],
