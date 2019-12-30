@@ -5,7 +5,7 @@ import { DataService } from '../data.service';
 
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-user-view',
   template: `
   <div class="container">
       <h2 class="md-5">Details for user {{user?.name}}</h2>
@@ -17,7 +17,7 @@ import { DataService } from '../data.service';
   `
 })
 
-export class UserComponent implements OnInit{
+export class UserViewComponent implements OnInit{
   user: User;
 
  constructor(private activatedRoute: ActivatedRoute, private dataService:DataService){}
