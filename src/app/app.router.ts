@@ -7,7 +7,7 @@ import { UserEditComponent } from './user/user-edit.component';
 export const appRoutes: Routes = [
   {path:'users', component: UsersComponent },
   {path:'users/new', component: UserNewComponent },
-  {path:'users/edit', component: UserEditComponent },
+  {path:'users/edit/:id', component: UserEditComponent },
   {path:'users/:id', component: UserViewComponent },
   {path:'', redirectTo:'/users', pathMatch:'full' }
 ]
