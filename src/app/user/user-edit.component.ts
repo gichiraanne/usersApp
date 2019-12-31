@@ -53,7 +53,6 @@ export class UserEditComponent implements OnInit {
 
     this.dataService.getUser(this.userToUpdateID).subscribe(data => {
       this.userToUpdate = data;
-      console.log(this.userToUpdate)
 
       this.updateUserForm = this.formBuilder.group({
         name: new FormControl(this.userToUpdate.name),
@@ -66,9 +65,7 @@ export class UserEditComponent implements OnInit {
 
   updateUser(user) {
     user.id = +this.userToUpdateID;
-    console.log(user)
     this.dataService.updateUser(user, this.userToUpdateID ).subscribe(data => {
-      console.log(data)
       this.router.navigate(['/users']);
     })
   }
