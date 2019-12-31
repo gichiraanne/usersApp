@@ -8,8 +8,8 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   selector: 'app-user-edit',
   template: `
   <div class="container">
-    <h1>Update {{updateUser?.name}}</h1>
-    <form [formGroup]="updateUserForm" >
+    <h1>Update {{userToUpdate?.name}}</h1>
+    <form [formGroup]="updateUserForm" (ngSubmit)="updateUser(updateUserForm.value)">
       <div class="form-group row">
         <label class="label col-sm-3" for="name">Name</label>
         <div class="col-md-9">
@@ -64,11 +64,12 @@ export class UserEditComponent implements OnInit {
 
   }
 
-  // updateUser(id, user) {
-  //   //let user = {name: "Edited Name",email: 'ram1@gmail.com', contact: '0000000000'}
-  //   user.name = "Edited"
-  //   this.dataService.updateUser(user, id).subscribe(data => {
-  //     this.showusers();
-  //   })
-  // }
+  updateUser(user) {
+    user.id = +this.userToUpdateID;
+    console.log(user)
+    this.dataService.updateUser(user, this.userToUpdateID ).subscribe(data => {
+      console.log(data)
+      this.router.navigate(['/users']);
+    })
+  }
 }
