@@ -2,13 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../users/user';
 import { DataService } from '../data.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-edit',
   template: `
   <div class="container">
     <h1>Update {{updateUser?.name}}</h1>
-    <form  >
+    <form [formGroup]="updateUserForm" >
       <div class="form-group row">
         <label class="label col-sm-3" for="name">Name</label>
         <div class="col-md-9">
@@ -39,17 +40,28 @@ import { DataService } from '../data.service';
 })
 
 export class UserEditComponent implements OnInit {
-  updateUser: User;
+  updateUser;
   updateUserID: Number;
+  updateUserForm: FormGroup;
 
-  constructor(private activatedRoute:ActivatedRoute, private router:Router, private dataService:DataService){}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataService: DataService,
+    private formBuilder: FormBuilder) {
+    }
 
-  ngOnInit(){
+  ngOnInit() {
     this.updateUserID = this.activatedRoute.snapshot.params['id'];
 
-    this.dataService.getUser(this.updateUserID).subscribe(data =>{
-      this.updateUser = data
+    this.dataService.getUser(this.updateUserID).subscribe(data => {
+      this.updateUser = data;
+      console.log(this.updateUser)
+
+      this.updateUserForm = this.formBuilder.group({
+        name: new FormControl(this.updateUser.name),
+        contact: new FormControl(this.updateUser.contact),
+        email: new FormControl(this.updateUser.email),
+      })
     })
+
 
   }
 }
