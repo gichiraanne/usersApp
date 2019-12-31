@@ -33,11 +33,5 @@ export class UsersComponent implements OnInit {
 
   }
 
-  updateUser(id, user) {
-    //let user = {name: "Edited Name",email: 'ram1@gmail.com', contact: '0000000000'}
-    user.name = "Edited"
-    this.dataService.updateUser(user, id).subscribe(data => {
-      this.showusers();
-    })
-  }
+
 }
