@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserViewComponent } from './user/user-view.component';
 import { UserNewComponent } from './user/user-new.component';
+import { UserEditComponent } from './user/user-edit.component';
 import { DataService } from './data.service';
 import { appRoutes } from './app.router';
 
@@ -19,7 +20,8 @@ import { appRoutes } from './app.router';
     AppComponent,
     UsersComponent,
     UserViewComponent,
-    UserNewComponent
+    UserNewComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
