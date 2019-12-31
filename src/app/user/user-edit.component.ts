@@ -40,8 +40,8 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 })
 
 export class UserEditComponent implements OnInit {
-  updateUser;
-  updateUserID: Number;
+  userToUpdate;
+  userToUpdateID: Number;
   updateUserForm: FormGroup;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataService: DataService,
@@ -49,16 +49,16 @@ export class UserEditComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.updateUserID = this.activatedRoute.snapshot.params['id'];
+    this.userToUpdateID = this.activatedRoute.snapshot.params['id'];
 
-    this.dataService.getUser(this.updateUserID).subscribe(data => {
-      this.updateUser = data;
-      console.log(this.updateUser)
+    this.dataService.getUser(this.userToUpdateID).subscribe(data => {
+      this.userToUpdate = data;
+      console.log(this.userToUpdate)
 
       this.updateUserForm = this.formBuilder.group({
-        name: new FormControl(this.updateUser.name),
-        contact: new FormControl(this.updateUser.contact),
-        email: new FormControl(this.updateUser.email),
+        name: new FormControl(this.userToUpdate.name),
+        contact: new FormControl(this.userToUpdate.contact),
+        email: new FormControl(this.userToUpdate.email),
       })
     })
 
