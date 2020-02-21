@@ -12,14 +12,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users | async">
-          <td>{{user.id}}</td>
+        <tr *ngFor="let user of users | async; let i=index">
+          {{user}}
+          <td>{{i + 1}}</td>
           <td>{{user.name}}</td>
           <td>{{user.email}}</td>
           <td>{{user.contact}}</td>
           <td>
-            <button class="btn btn-sm btn-primary mr-3 mb-2" type="button" routerLink="/users/{{user.id}}">View</button>
-            <button class="btn btn-sm btn-secondary mr-3 mb-2" type="button" routerLink="/users/edit/{{user.id}}">Update</button>
+            <button class="btn btn-sm btn-primary mr-3 mb-2" type="button" routerLink="/users/{{i}}">View</button>
+            <button class="btn btn-sm btn-secondary mr-3 mb-2" type="button" routerLink="/users/edit/{{i}}">Update</button>
             <button  class="btn btn-sm btn-danger" type="button" (click)="deleteUser(user.id, user.name)">Delete</button>
           </td>
         </tr>

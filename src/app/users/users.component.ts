@@ -17,9 +17,9 @@ export class UsersComponent {
     this.users = this.store.pipe(select('users'));
   }
 
-  // ngOnInit() {
-  //   // this.showusers()
-  // }
+  ngOnInit() {
+    console.log(this.users)
+  }
 
 
   // showusers() {
