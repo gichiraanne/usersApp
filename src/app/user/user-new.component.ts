@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { CustomerAdd } from '../users/user.actions';
+import { User } from '../users/user';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-user-new',
@@ -12,7 +15,7 @@ export class UserNewComponent {
 
   userForm: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private dataService:DataService, private router:Router){
+  constructor(private formBuilder:FormBuilder, private router:Router, private store: Store<{users: User[]}>){
     this.userForm = this.formBuilder.group({
       name: new FormControl(),
       contact: new FormControl(),
@@ -20,10 +23,10 @@ export class UserNewComponent {
     })
   }
 
-  createUser(user){
-    this.dataService.createUser(user).subscribe(data => {
-      this.router.navigate(['/users']);
-    })
+  createUser(userData: User){
+    this.store.dispatch(new CustomerAdd(userData))
+
+    this.router.navigate(['/users']);
   }
 
 }
