@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataApi } from './data-api';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -15,6 +16,7 @@ import { UserEditComponent } from './user/user-edit.component';
 import { DataService } from './data.service';
 import { appRoutes } from './app.router';
 import { UserReducer } from './users/user.reducers';
+import { UserEffects } from './users/user.effects';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { UserReducer } from './users/user.reducers';
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     InMemoryWebApiModule.forRoot(DataApi),
-    StoreModule.forRoot({ users: UserReducer })
+    StoreModule.forRoot({ users: UserReducer }),
+    EffectsModule.forRoot([UserEffects])
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
