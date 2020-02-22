@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { User } from './user';
 import { Store, select } from '@ngrx/store';
+import { CustomerRemove, UsersLoad} from '../users/user.actions';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,7 @@ import { Store, select } from '@ngrx/store';
 
 export class UsersComponent {
   users: Observable<User[]>;
+  //users
 
   constructor(private store: Store<{ users: User[] }>) {
     this.users = this.store.pipe(select('users'));
@@ -19,6 +21,7 @@ export class UsersComponent {
 
   ngOnInit() {
     console.log(this.users)
+    this.store.dispatch(new UsersLoad())
   }
 
 
@@ -28,14 +31,14 @@ export class UsersComponent {
   //   })
   // }
 
-  // deleteUser(id, name) {
-  //   if (confirm(`Are you sure you want to delete ${name}?`)) {
-  //     this.dataService.deleteUser(id).subscribe(data => {
-  //       this.showusers()
-  //     })
-  //   }
-
-  //}
+  deleteUser(id, name) {
+    if (confirm(`Are you sure you want to delete ${name}?`)) {
+      // this.dataService.deleteUser(id).subscribe(data => {
+      //   this.showusers()
+      // })
+      this.store.dispatch(new CustomerRemove(id));
+    }
+  }
 
 
 }
